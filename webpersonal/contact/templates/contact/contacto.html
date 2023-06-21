@@ -1,0 +1,68 @@
+{% extends "core/base.html" %}
+
+{% block title%}Contacto {% endblock%}
+<!--cargando la imagen en el encabezado todo en una sola linea-->
+{% block background %} {% load static %} {% static 'core/img/contact-bg.jpg' %} {% endblock%} 
+<!--nombres y tutulo del encabezado en la imagen-->
+{% block header %}
+    <h1>Contacto</h1>
+    <span class="subheading">Asesoría</span>
+{% endblock%}
+
+{% block content%}
+
+    <div class="row ml-5"> 
+    
+    {% if 'ok' in request.GET %}
+    <p>su mensaje fue enviado correctamente </p>
+    <br>
+    {% endif %}
+    <!--
+    <form action="" method="POST">
+     {% csrf_token %}
+    <table>
+    {{form.as_table}}
+    </table>
+     <input type="submit" value="Enviar" />
+    </form> -->
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+        <label>Nombre *</label>
+        <div class="input-group">
+            {{form.name}}
+        </div>
+            {{form.name.errors}}
+        </div>
+        <div class="form-group">
+        <label>Email *</label>
+        <div class="input-group">
+            {{form.email}}
+        </div>
+            {{form.email.errors}}
+        </div>
+        <div class="form-group">
+        <label>Mensaje *</label>
+        <div class="input-group">
+         {{form.content}}
+        </div>
+        {{form.content.errors}}
+        </div>
+        <div class="text-center">
+            <input type="submit" class="btn btn-primary btn-block py-2" value="Enviar">
+        </div>
+    </form>
+    <br/>
+    </div>
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Saepe nostrum ullam eveniet pariatur voluptates odit, fuga
+        atque ea nobis sit soluta odio, adipisci quas excepturi maxime
+        quae totam ducimus consectetur?</p>
+        <br>
+        <p><b>Teléfono:</b> 3112398034</p>
+        <p><b>Honorarios:</b> 60/h (precio base)</p>
+    
+</div>
+{% endblock%} 
+

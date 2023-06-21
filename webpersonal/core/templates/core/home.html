@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+<!--envia el titulo a la base -->
+{% block title%}Home {% endblock%}
+<!--cargando la imagen en el encabezado todo en una sola linea-->
+{% block background %} {% load static %} {% static 'core/img/home-bg.jpg' %} {% endblock%} 
+<!--nombres y tutulo del encabezado en la imagen-->
+{% block header %}
+    <h2>Fredy Moncaleano</h2>
+    <span class="subheading">Ingeniero de sistemas</span>
+{% endblock%}    
+<!--contenido que se ba a pasar a la base -->
+{% block content%}
+    <h1>Welcome</h1>
+    <p>HOME</p>
+    
+{% endblock%}

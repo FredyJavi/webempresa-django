@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+{% block title%}About {% endblock%}
+
+<!--cargando la imagen en el encabezado todo en una sola linea-->
+{% block background %} {% load static %} {% static 'core/img/about-bg.jpg' %} {% endblock%} 
+<!--nombres y tutulo del encabezado en la imagen-->
+{% block header %}
+    <h2>A serca de </h2>
+    <span class="subheading">Biografia</span>
+{% endblock%}
+{% block content %}
+<div class="row"> 
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+        <img class="img-fluid avatar" 
+            src="{% static 'core/img/avatar.jpg' %}" alt="">
+    </div>
+    <div class="col-lg-7 col-md-8">
+        <h2 class="section-heading">Fredy Moncaleano</h2>   
+        <p>Nacido en... </p>
+    </div>
+</div>
+{% endblock %}   

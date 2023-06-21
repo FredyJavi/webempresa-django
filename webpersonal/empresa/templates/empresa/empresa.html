@@ -1,0 +1,33 @@
+{% extends "core/base.html" %}
+
+{% block title%}Contacto {% endblock%}
+<!--cargando la imagen en el encabezado todo en una sola linea-->
+{% block background %} {% load static %} {% static 'core/img/contact-bg.jpg' %} {% endblock%} 
+<!--nombres y tutulo del encabezado en la imagen-->
+{% block header %}
+    <h1>Empresa</h1>
+    
+
+    {% endblock%}
+    
+
+{% block content%}
+
+    {% for pag in page %}
+    <div class="container">
+    <div class="row">
+    <span class="subheading">{{pag.title}}</span>
+     <div class="col-md-4 mx-auto">
+        <p>{{pag.content|safe}}</p> 
+        {% if user.is_authenticated %} 
+               <p> <a href="{% url 'admin:empresa_page_change' pag.id %}" target="_blank">Editar</a></p>
+        {% endif %}
+
+    </div> 
+    </div>   
+    {%endfor%}
+      
+    
+</div>
+{% endblock%} 
+
